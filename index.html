@@ -2,7 +2,10 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Nokya</title>
 
     <link
@@ -10,9 +13,9 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"
     />
-    <link rel="stylesheet" href="css/reset.css?v=24032403" />
-    <link rel="stylesheet" href="css/common.css?v=24032403" />
-    <link rel="stylesheet" href="css/style.css?v=24032403" />
+    <link rel="stylesheet" href="css/reset.css?v=25032401" />
+    <link rel="stylesheet" href="css/common.css?v=25032401" />
+    <link rel="stylesheet" href="css/style.css?v=25032401" />
   </head>
 
   <body>
@@ -46,81 +49,106 @@
       </div>
 
       <nav class="full-menu__nav">
-        <a href="index.html">HOME</a>
-        <a href="menu1.html">MENU_1</a>
-        <a href="menu2.html">MENU_2</a>
-        <a href="menu3.html">MENU_3</a>
-        <a href="contact.html">CONTACT</a>
+        <a href="index.html">홈</a>
+        <a href="menu1.html">메뉴1</a>
+        <a href="menu2.html">메뉴2</a>
+        <a href="menu3.html">메뉴3</a>
+        <a href="contact.html">컨택트</a>
       </nav>
     </aside>
 
-    <section id="section1" class="hero-slider">
-      <div class="hero-slides">
-        <div class="hero-slide active">
-          <video
-            src="video/main_section_1.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-          ></video>
-          <div class="hero-overlay"></div>
-          <div class="hero-content">
-            <p class="hero-subtitle">Nokya Archive</p>
-            <h1 class="hero-title">
-              Quiet warmth,<br />
-              softly glowing moments
-            </h1>
+    <main>
+      <section id="section1" class="hero-slider">
+        <div class="hero-slides">
+          <div class="hero-slide active">
+            <video
+              src="video/main_section_1.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+            ></video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <p class="hero-subtitle">Nokya Archive</p>
+              <h1 class="hero-title">
+                Quiet warmth,<br />
+                softly glowing moments
+              </h1>
+            </div>
+          </div>
+
+          <div class="hero-slide">
+            <video
+              src="video/main_section_2.mp4"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <p class="hero-subtitle">Nokya World</p>
+              <h2 class="hero-title">
+                Small comfort,<br />
+                everyday archive
+              </h2>
+            </div>
+          </div>
+
+          <div class="hero-slide">
+            <video
+              src="video/main_section_3.mp4"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <p class="hero-subtitle">Nokya Mood</p>
+              <h2 class="hero-title">
+                A gentle pause<br />
+                in a busy day
+              </h2>
+            </div>
+          </div>
+
+          <div class="hero-slide">
+            <video
+              src="video/main_section_4.mp4"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <p class="hero-subtitle">Nokya Story</p>
+              <h2 class="hero-title">
+                Silent comfort,<br />
+                warm little records
+              </h2>
+            </div>
           </div>
         </div>
 
-        <div class="hero-slide">
-          <video src="video/main_section_2.mp4" muted loop playsinline></video>
-          <div class="hero-overlay"></div>
-          <div class="hero-content">
-            <p class="hero-subtitle">Nokya World</p>
-            <h2 class="hero-title">
-              Small comfort,<br />
-              everyday archive
-            </h2>
-          </div>
+        <div class="hero-pagination" aria-label="슬라이드 페이지네이션">
+          <button
+            class="pagination-dot active"
+            type="button"
+            data-index="0"
+          ></button>
+          <button class="pagination-dot" type="button" data-index="1"></button>
+          <button class="pagination-dot" type="button" data-index="2"></button>
+          <button class="pagination-dot" type="button" data-index="3"></button>
         </div>
 
-        <div class="hero-slide">
-          <video src="video/main_section_3.mp4" muted loop playsinline></video>
-          <div class="hero-overlay"></div>
-          <div class="hero-content">
-            <p class="hero-subtitle">Nokya Mood</p>
-            <h2 class="hero-title">
-              A gentle pause<br />
-              in a busy day
-            </h2>
-          </div>
-        </div>
+        <button class="hero-control" type="button">Pause</button>
+      </section>
+    </main>
 
-        <div class="hero-slide">
-          <video src="video/main_section_4.mp4" muted loop playsinline></video>
-          <div class="hero-overlay"></div>
-          <div class="hero-content">
-            <p class="hero-subtitle">Nokya Story</p>
-            <h2 class="hero-title">
-              Silent comfort,<br />
-              warm little records
-            </h2>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-pagination">
-        <button class="pagination-dot active" data-index="0"></button>
-        <button class="pagination-dot" data-index="1"></button>
-        <button class="pagination-dot" data-index="2"></button>
-        <button class="pagination-dot" data-index="3"></button>
-      </div>
-
-      <button class="hero-control" type="button">Pause</button>
-    </section>
-
-    <script src="js/main.js?v=24032403"></script>
+    <script src="js/main.js?v=25032401"></script>
   </body>
 </html>

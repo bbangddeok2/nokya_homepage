@@ -17,16 +17,24 @@ document.addEventListener("DOMContentLoaded", () => {
   function showSlide(index) {
     slides.forEach((slide, i) => {
       const isActive = i === index;
-      slide.classList.toggle("active", isActive);
-      dots[i].classList.toggle("active", isActive);
 
-      if (isActive) {
-        if (!isPaused) {
-          videos[i].play().catch(() => {});
+      slide.classList.toggle("active", isActive);
+      if (dots[i]) dots[i].classList.toggle("active", isActive);
+
+      if (videos[i]) {
+        if (isActive) {
+          if (!isPaused) {
+            const playPromise = videos[i].play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {});
+            }
+          }
+        } else {
+          videos[i].pause();
+          try {
+            videos[i].currentTime = 0;
+          } catch (e) {}
         }
-      } else {
-        videos[i].pause();
-        videos[i].currentTime = 0;
       }
     });
 
@@ -53,18 +61,24 @@ document.addEventListener("DOMContentLoaded", () => {
   function pauseSlider() {
     isPaused = true;
     stopAutoSlide();
-    videos[current].pause();
+    if (videos[current]) videos[current].pause();
     if (controlButton) controlButton.textContent = "Play";
   }
 
   function resumeSlider() {
     isPaused = false;
-    videos[current].play().catch(() => {});
+    if (videos[current]) {
+      const playPromise = videos[current].play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {});
+      }
+    }
     startAutoSlide();
     if (controlButton) controlButton.textContent = "Pause";
   }
 
   function openMenu() {
+    if (!fullMenu || !menuToggle) return;
     fullMenu.classList.add("active");
     body.classList.add("menu-open");
     menuToggle.setAttribute("aria-expanded", "true");
@@ -72,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function closeMenu() {
+    if (!fullMenu || !menuToggle) return;
     fullMenu.classList.remove("active");
     body.classList.remove("menu-open");
     menuToggle.setAttribute("aria-expanded", "false");
@@ -113,6 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  showSlide(0);
-  startAutoSlide();
+  if (slides.length) {
+    showSlide(0);
+    startAutoSlide();
+  }
 });
