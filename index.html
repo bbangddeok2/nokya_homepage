@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nokya</title>
+
     <link
       rel="stylesheet"
       as="style"
@@ -12,11 +13,76 @@
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
-    <section id="section1">
-      <video src="video/3.mp4" autoplay muted loop playsinline></video>
+    <!-- Section 1: Hero Slider -->
+    <section id="section1" class="hero-slider">
+      <div class="hero-slides">
+        <div class="hero-slide active">
+          <video
+            src="video/main_section_1.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <p class="hero-subtitle">Nokya Archive</p>
+            <h1 class="hero-title">
+              Quiet warmth,<br />
+              softly glowing moments
+            </h1>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <video src="video/main_section_2.mp4" muted loop playsinline></video>
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <p class="hero-subtitle">Nokya World</p>
+            <h2 class="hero-title">
+              Small comfort,<br />
+              everyday archive
+            </h2>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <video src="video/main_section_3.mp4" muted loop playsinline></video>
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <p class="hero-subtitle">Nokya Mood</p>
+            <h2 class="hero-title">
+              A gentle pause<br />
+              in a busy day
+            </h2>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <video src="video/main_section_4.mp4" muted loop playsinline></video>
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <p class="hero-subtitle">Nokya Story</p>
+            <h2 class="hero-title">
+              Silent comfort,<br />
+              warm little records
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- pagination -->
+      <div class="hero-pagination">
+        <button class="pagination-dot active" data-index="0"></button>
+        <button class="pagination-dot" data-index="1"></button>
+        <button class="pagination-dot" data-index="2"></button>
+        <button class="pagination-dot" data-index="3"></button>
+      </div>
     </section>
 
+    <!-- Section 2 -->
     <section id="section2">
       <div class="container">
         <div class="about-text">
@@ -26,6 +92,7 @@
       </div>
     </section>
 
+    <!-- Section 3 -->
     <section id="section3">
       <div class="container">
         <div class="archive-grid">
@@ -57,6 +124,6 @@
       </div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
