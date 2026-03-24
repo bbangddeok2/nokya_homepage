@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const videos = document.querySelectorAll(".hero-slide video");
   const controlButton = document.querySelector(".hero-control");
 
+  const menuToggle = document.querySelector(".menu-toggle");
+  const menuClose = document.querySelector(".menu-close");
+  const fullMenu = document.querySelector(".full-menu");
+  const body = document.body;
+
   let current = 0;
   const delay = 5000;
   let interval = null;
@@ -49,14 +54,28 @@ document.addEventListener("DOMContentLoaded", () => {
     isPaused = true;
     stopAutoSlide();
     videos[current].pause();
-    controlButton.textContent = "Play";
+    if (controlButton) controlButton.textContent = "Play";
   }
 
   function resumeSlider() {
     isPaused = false;
     videos[current].play().catch(() => {});
     startAutoSlide();
-    controlButton.textContent = "Pause";
+    if (controlButton) controlButton.textContent = "Pause";
+  }
+
+  function openMenu() {
+    fullMenu.classList.add("active");
+    body.classList.add("menu-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+    fullMenu.setAttribute("aria-hidden", "false");
+  }
+
+  function closeMenu() {
+    fullMenu.classList.remove("active");
+    body.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    fullMenu.setAttribute("aria-hidden", "true");
   }
 
   dots.forEach((dot) => {
@@ -79,6 +98,20 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  if (menuToggle) {
+    menuToggle.addEventListener("click", openMenu);
+  }
+
+  if (menuClose) {
+    menuClose.addEventListener("click", closeMenu);
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeMenu();
+    }
+  });
 
   showSlide(0);
   startAutoSlide();

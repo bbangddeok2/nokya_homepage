@@ -10,13 +10,50 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"
     />
-    <link rel="stylesheet" href="css/reset.css?v=24032401" />
-    <link rel="stylesheet" href="css/common.css?v=24032401" />
-    <link rel="stylesheet" href="css/style.css?v=24032401" />
+    <link rel="stylesheet" href="css/reset.css?v=24032403" />
+    <link rel="stylesheet" href="css/common.css?v=24032403" />
+    <link rel="stylesheet" href="css/style.css?v=24032403" />
   </head>
 
   <body>
-    <!-- Section 1: Hero Slider -->
+    <header class="header">
+      <a href="index.html" class="header-logo" aria-label="Nokya home">
+        <img src="img/hp_logo_wh.png" alt="Nokya" />
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="메뉴 열기"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <aside class="full-menu" aria-hidden="true">
+      <div class="full-menu__top">
+        <a href="index.html" class="full-menu__logo" aria-label="Nokya home">
+          <img src="img/hp_logo_bk.png" alt="Nokya" />
+        </a>
+
+        <button class="menu-close" type="button" aria-label="메뉴 닫기">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="full-menu__nav">
+        <a href="index.html">HOME</a>
+        <a href="menu1.html">MENU_1</a>
+        <a href="menu2.html">MENU_2</a>
+        <a href="menu3.html">MENU_3</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </aside>
+
     <section id="section1" class="hero-slider">
       <div class="hero-slides">
         <div class="hero-slide active">
@@ -84,46 +121,6 @@
       <button class="hero-control" type="button">Pause</button>
     </section>
 
-    <section id="section2">
-      <div class="container">
-        <div class="about-text">
-          마음속 깊은 곳, 따뜻한 온기를 품은 Nokya의 일상.<br />
-          말없이 전해지는 위로와 포근한 아카이브를 만나보세요.
-        </div>
-      </div>
-    </section>
-
-    <section id="section3">
-      <div class="container">
-        <div class="archive-grid">
-          <div class="archive-item">
-            <div class="thumb"></div>
-            <div class="archive-title">01. Nokya's Morning</div>
-          </div>
-          <div class="archive-item">
-            <div class="thumb"></div>
-            <div class="archive-title">02. Little Forest</div>
-          </div>
-          <div class="archive-item">
-            <div class="thumb"></div>
-            <div class="archive-title">03. Winter Hug</div>
-          </div>
-          <div class="archive-item">
-            <div class="thumb"></div>
-            <div class="archive-title">04. Evening Glow</div>
-          </div>
-          <div class="archive-item">
-            <div class="thumb"></div>
-            <div class="archive-title">05. Secret Garden</div>
-          </div>
-          <div class="archive-item">
-            <div class="thumb"></div>
-            <div class="archive-title">06. Dreamy Night</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <script src="js/main.js?v=24032401"></script>
+    <script src="js/main.js?v=24032403"></script>
   </body>
 </html>
