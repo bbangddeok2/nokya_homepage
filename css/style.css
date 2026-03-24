@@ -27,8 +27,8 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 200;
-  pointer-events: none;
+  z-index: 999;
+  /* pointer-events: none; */
 }
 
 .header-logo,
